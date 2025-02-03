@@ -3,12 +3,31 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("gradingScale").addEventListener("change", updateMaxGPA);
 });
 function updateMaxGPA() {
-    var scale = document.getElementById("gradingScale").value;
-    var gpaInputs = document.querySelectorAll('.gpa');
-    gpaInputs.forEach(function(input) {
+    let scale = parseFloat(document.getElementById("gradingScale").value);
+    document.querySelectorAll('.gpa').forEach(input => {
         input.max = scale;
+        validateGPA(input);
     });
 }
+
+function validateGPA(input) {
+    let scale = parseFloat(document.getElementById("gradingScale").value);
+    let gpa = parseFloat(input.value);
+
+    if (isNaN(gpa) || gpa < 0) {
+        input.value = "";
+    } else if (gpa > scale) {
+        input.value = scale;
+    }
+}
+
+function validateCreditHours(input) {
+    let value = input.value;
+    if (!/^[1-9]\d*$/.test(value)) {
+        input.value = "";
+    }
+}
+
 function addRow() {
     const tableBody = document.querySelector("#gpaTable tbody");
     const rowCount = tableBody.rows.length + 1;
@@ -19,8 +38,8 @@ function addRow() {
     const newRow = document.createElement("tr");
     newRow.innerHTML = `
         <td>Semester ${rowCount}</td>
-        <td><input type="number" step="0.1" class="gpa" placeholder="Enter GPA" min="0" ></td>
-        <td><input type="number" step="1" class="creditHours" placeholder="Enter Credit Hours" min="1"></td>
+        <td><input type="number" step="0.1" class="gpa" placeholder="Enter GPA" min="0" oninput="validateGPA(this)"></td>
+        <td><input type="number" step="1" class="creditHours" placeholder="Enter Credit Hours" min="1" oninput="validateCreditHours(this)"></td>
         <td><button type="button" class="del-btn" onclick="removeRow(this)">Delete</button></td>
     `;
     tableBody.appendChild(newRow);
@@ -46,7 +65,7 @@ function calculateCGPA() {
     }
     const resultDisplay = document.querySelector("#result");
     if (!validInputs) {
-        resultDisplay.textContent = "Error: Please enter valid GPA (0-10) and Credit Hours (greater than 0).";
+        resultDisplay.textContent = "Error: Please enter valid GPA and Credit Hours.";
         resultDisplay.style.color = "red";
     } else if (totalCredits === 0) {
         resultDisplay.textContent = "Error: Total credit hours cannot be zero.";

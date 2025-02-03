@@ -1,66 +1,108 @@
 body{
-    background-color: #ede8f5;
+    background-color: #ffffff;
 }
 #header {
-    background-color: #3f51b5;
-    color: white;
-    padding: 10px;
+    background-color: #2b2b2b;
+    color: #ffffff;
+    padding: 2%;
     text-align: center;
-    font-size: 1.5em;
+    font-size: 2.0em;
     font-family: Arial, sans-serif;
+    cursor: pointer;
 }
 #container {
-    width: 80%;
+    width: 100%;
     margin: auto;
     text-align: center;
     font-family: Arial, sans-serif;
-    background-color: #7091e6;
+    background-color: #ffffff;
+    cursor:pointer;
+}
+#scale{
+    color: #2b2b2b;
+    font-size:1.0em;
+    text-align:center;
+    padding: 5px;
+    margin: 10px 0;
 }
 #gradingScale {
     padding: 5px;
     margin: 10px 0;
 }
 #gpaTable {
-    width: 100%;
+    width: 90%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-top: 2%;
+    color:#fff;
+    margin-left: 2%;
+    margin-right: 0%;
+    margin-bottom: 2%;
 }
 #gpaTable th, #gpaTable td {
-    border: 1px solid #ddd;
-    padding: 10px;
+    border: 1px solid #b3b3b3;
+    padding: 3px;
     text-align: center;
 }
 #gpaTable tr:nth-child(even) {
-    background-color: #b5c3e0;
+    background-color: #d4d4d4;
+}
+#gpaTable tr:nth-child(odd){
+    color:#b3b3b3;
 }
 #gpaTable th {
-    background-color: #3f51b5;
-    ;
+    background-color: #2b2b2b;
+    padding:20px;
 }
 .gpa, .creditHours {
     width: 90%;
     padding: 5px;
 }
-.add-btn, .calc-btn, .reset-btn, .del-btn {
+.add-btn, .calc-btn {
+    background-color: transparent;
+    padding: 8px 12px;
+    margin: 10px 5px;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    border-radius: 4px;
+    text-decoration: none; 
+    transition: all 0.3s ease;
+}
+.reset-btn, .del-btn {
     padding: 8px 12px;
     margin: 10px 5px;
     border: none;
     cursor: pointer;
-}
-.add-btn {
-    background-color: #4CAF50;
-    color: white;
+    text-align: center;
+    display: inline-block;
+    border-radius: 4px;
+    text-decoration: none; 
+    transition: all 0.3s ease;
 }
 .calc-btn {
-    background-color: #008CBA;
+    color: #005c5c; 
+    border: 2px solid #005c5c; 
+  }
+  
+  .calc-btn:hover {
+    background-color: #005c5c; 
+    color: #fff; 
+    border-color: #005c5c; 
+  }
+.reset-btn {
+    background-color: #4052d6;
     color: white;
 }
-.reset-btn {
-    background-color: #f44336;
+.reset-btn:hover {
+    background-color: #3645b6;
     color: white;
 }
 .del-btn {
-    background-color: #ff9800;
+    background-color: #660f09;
+    color: white;
+}
+.del-btn:hover {
+    background-color: #480b07;
     color: white;
 }
 #result {
@@ -68,3 +110,14 @@ body{
     font-size: 1.2em;
     font-weight: bold;
 }
+.add-btn {
+    color: #422701; 
+    border: 2px solid #422701; 
+  }
+  
+  .add-btn:hover {
+    background-color: #422701; 
+    color: #fff; 
+    border-color: #422701; 
+  }
+  
