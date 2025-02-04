@@ -82,13 +82,12 @@ body{
 .calc-btn {
     color: #005c5c; 
     border: 2px solid #005c5c; 
-  }
-  
-  .calc-btn:hover {
+}
+.calc-btn:hover {
     background-color: #005c5c; 
     color: #fff; 
     border-color: #005c5c; 
-  }
+}
 .reset-btn {
     background-color: #4052d6;
     color: white;
@@ -113,11 +112,10 @@ body{
 .add-btn {
     color: #422701; 
     border: 2px solid #422701; 
-  }
+}
   
-  .add-btn:hover {
+.add-btn:hover {
     background-color: #422701; 
     color: #fff; 
     border-color: #422701; 
-  }
-  
+}
